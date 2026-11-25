@@ -20,29 +20,37 @@ const GROUP_ICON = { bank: Landmark, ewallet: Smartphone, crypto: Bitcoin, cash:
  * Official logo only (from /assets/logos). If the file is missing or fails to
  * load: dark-grey circle + abbreviation. Logos are never drawn/guessed.
  */
-export function WalletLogo({ code, mini = false }) {
+const PAD_MARK_BG = { BITKUB: '#ffffff', BITTAZA: '#0c121b' };
+
+export function WalletLogo({ code, mini = false, size }) {
   const p = findProvider(code);
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [code]);
   const url = p?.file ? logoUrl(p.file) : null;
+  const dimStyle = size ? { width: size, height: size } : undefined;
+  const padBg = PAD_MARK_BG[code];
 
   let inner;
   if (url && !failed) {
     inner = (
-      <div className="logo-box">
+      <div
+        className={`logo-box ${padBg ? 'pad-mark' : ''}`}
+        style={dimStyle || padBg ? { ...dimStyle, ...(padBg ? { background: padBg } : null) } : undefined}
+      >
         <img src={url} alt={p.en} loading="lazy" onError={() => setFailed(true)} />
       </div>
     );
-  } else if (mini || (p && !p.file && p.icon)) {
+  } else if (mini || size || (p && !p.file)) {
     const G = p?.icon ? null : GROUP_ICON[p?.group] || Wallet;
+    const icSz = mini ? 11 : size ? Math.round(size * 0.54) : 20;
     inner = (
-      <div className="logo-fallback" aria-label={p?.th || code}>
-        {G ? <G size={mini ? 11 : 20} strokeWidth={STROKE} /> : <Icon name={p.icon} size={mini ? 11 : 20} />}
+      <div className="logo-fallback" aria-label={p?.th || code} style={dimStyle}>
+        {G ? <G size={icSz} strokeWidth={STROKE} /> : <Icon name={p?.icon || 'wallet'} size={icSz} />}
       </div>
     );
   } else {
     inner = (
-      <div className="logo-fallback" aria-label={p?.th || code} style={{ fontSize: (code || '').length > 6 ? 8.5 : 10.5 }}>
+      <div className="logo-fallback" aria-label={p?.th || code} style={{ ...dimStyle, fontSize: (code || '').length > 6 ? 8.5 : 10.5 }}>
         {code}
       </div>
     );
@@ -60,7 +68,13 @@ export function CategoryIcon({ cat, transfer, walletCode, size = 40 }) {
   );
 }
 
+let sheetSeq = 60;
+
 export function Sheet({ title, onClose, children, full = false, left, right }) {
+  const [zBase] = useState(() => {
+    sheetSeq += 2;
+    return sheetSeq;
+  });
   useEffect(() => {
     const tg = window.Telegram?.WebApp;
     const bb = tg?.BackButton;
@@ -74,8 +88,8 @@ export function Sheet({ title, onClose, children, full = false, left, right }) {
   }, [onClose]);
   return createPortal(
     <>
-      <div className="backdrop" onClick={onClose} />
-      <section className={`sheet ${full ? 'full' : ''}`} role="dialog" aria-modal="true" aria-label={title}>
+      <div className="backdrop" style={{ zIndex: zBase }} onClick={onClose} />
+      <section className={`sheet ${full ? 'full' : ''}`} style={{ zIndex: zBase + 1 }} role="dialog" aria-modal="true" aria-label={title}>
         {!full && <div className="sheet-grip" />}
         <header className="sheet-head" style={full ? { paddingTop: 12 } : undefined}>
           {left || (

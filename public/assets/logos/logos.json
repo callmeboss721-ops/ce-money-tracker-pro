@@ -2,8 +2,8 @@
   "_note": "ใช้ไฟล์โลโก้ทางการเท่านั้น ห้ามวาดเอง ถ้าไม่มีไฟล์ให้แสดงตัวย่อ",
   "banks": [
     {"code":"KBANK","th":"ธนาคารกสิกรไทย (K PLUS)","en":"Kasikornbank","file":"banks/kbank.png","order":1},
-    {"code":"MAKE","th":"MAKE by KBank","en":"MAKE by KBank","file":null,"order":2},
-    {"code":"KTC","th":"บัตรเครดิต KTC","en":"Krungthai Card","file":null,"order":3},
+    {"code":"MAKE","th":"MAKE by KBank","en":"MAKE by KBank","file":"banks/make.png","order":2},
+    {"code":"KTC","th":"บัตรเครดิต KTC","en":"Krungthai Card","file":"banks/ktc.png","order":3},
     {"code":"SCB","th":"ธนาคารไทยพาณิชย์","en":"Siam Commercial Bank","file":"banks/scb.png","order":4},
     {"code":"BBL","th":"ธนาคารกรุงเทพ","en":"Bangkok Bank","file":"banks/bbl.png","order":5},
     {"code":"KTB","th":"ธนาคารกรุงไทย","en":"Krungthai Bank","file":"banks/ktb.png","order":6},

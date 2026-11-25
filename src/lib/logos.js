@@ -9,7 +9,11 @@ export const GROUPS = [
 
 const BASE = import.meta.env.BASE_URL || './';
 export const logoUrl = (file) => {
-  if (!file || (typeof window !== 'undefined' && window.__CE_STANDALONE__)) return null;
+  if (!file) return null;
+  if (typeof window !== 'undefined' && window.__CE_LOGOS__?.[file]) {
+    return window.__CE_LOGOS__[file];
+  }
+  if (typeof window !== 'undefined' && window.__CE_STANDALONE__) return null;
   return `${BASE}assets/logos/${file}`;
 };
 

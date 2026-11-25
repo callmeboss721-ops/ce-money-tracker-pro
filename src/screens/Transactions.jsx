@@ -36,7 +36,7 @@ import {
   round2,
 } from '../lib/format';
 import { CHANNELS, channelInfo, inferChannelFromWallet } from '../lib/channels';
-import { CategoryIcon, Sheet, useUi, STROKE } from '../components/ui';
+import { CategoryIcon, WalletLogo, Sheet, useUi, STROKE } from '../components/ui';
 
 export function TxRow({ tx, onClick, showDate }) {
   const { categories, wallets, settings } = useStore();
@@ -320,8 +320,14 @@ export default function Transactions({ openTx, openQuickAdd }) {
           ทั้งหมด
         </button>
         {activeWallets.map((w) => (
-          <button key={w.id} className={`w-pill ${scope === w.id ? 'on' : ''}`} onClick={() => setScope(scope === w.id ? 'all' : w.id)}>
-            {w.name}
+          <button
+            key={w.id}
+            className={`w-pill ${scope === w.id ? 'on' : ''}`}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '0 13px' }}
+            onClick={() => setScope(scope === w.id ? 'all' : w.id)}
+          >
+            <WalletLogo code={w.providerCode} size={20} />
+            <span>{w.name}</span>
           </button>
         ))}
       </div>
