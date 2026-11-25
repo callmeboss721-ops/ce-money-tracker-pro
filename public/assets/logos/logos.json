@@ -1,0 +1,44 @@
+{
+  "_note": "ใช้ไฟล์โลโก้ทางการเท่านั้น ห้ามวาดเอง ถ้าไม่มีไฟล์ให้แสดงตัวย่อ",
+  "banks": [
+    {"code":"KBANK","th":"ธนาคารกสิกรไทย (K PLUS)","en":"Kasikornbank","file":"banks/kbank.png","order":1},
+    {"code":"MAKE","th":"MAKE by KBank","en":"MAKE by KBank","file":null,"order":2},
+    {"code":"KTC","th":"บัตรเครดิต KTC","en":"Krungthai Card","file":null,"order":3},
+    {"code":"SCB","th":"ธนาคารไทยพาณิชย์","en":"Siam Commercial Bank","file":"banks/scb.png","order":4},
+    {"code":"BBL","th":"ธนาคารกรุงเทพ","en":"Bangkok Bank","file":"banks/bbl.png","order":5},
+    {"code":"KTB","th":"ธนาคารกรุงไทย","en":"Krungthai Bank","file":"banks/ktb.png","order":6},
+    {"code":"BAY","th":"ธนาคารกรุงศรีอยุธยา","en":"Bank of Ayudhya (Krungsri)","file":"banks/bay.png","order":7},
+    {"code":"TTB","th":"ธนาคารทหารไทยธนชาต","en":"TMBThanachart Bank","file":"banks/ttb.png","order":8},
+    {"code":"GSB","th":"ธนาคารออมสิน","en":"Government Savings Bank","file":"banks/gsb.png","order":9},
+    {"code":"BAAC","th":"ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร","en":"BAAC","file":"banks/baac.png","order":10},
+    {"code":"UOB","th":"ธนาคารยูโอบี","en":"UOB","file":"banks/uob.png","order":11},
+    {"code":"CIMBT","th":"ธนาคารซีไอเอ็มบี ไทย","en":"CIMB Thai","file":"banks/cimbt.png","order":12},
+    {"code":"KKP","th":"ธนาคารเกียรตินาคินภัทร","en":"Kiatnakin Phatra","file":"banks/kkp.png","order":13},
+    {"code":"TISCO","th":"ธนาคารทิสโก้","en":"TISCO","file":"banks/tisco.png","order":14},
+    {"code":"LHBANK","th":"ธนาคารแลนด์ แอนด์ เฮ้าส์","en":"LH Bank","file":"banks/lhbank.png","order":15},
+    {"code":"GHB","th":"ธนาคารอาคารสงเคราะห์","en":"Government Housing Bank","file":"banks/ghb.png","order":16},
+    {"code":"ISBT","th":"ธนาคารอิสลามแห่งประเทศไทย","en":"Islamic Bank of Thailand","file":"banks/isbt.png","order":17},
+    {"code":"OTHER_BANK","th":"ธนาคารอื่น","en":"Other Bank","file":null,"order":18}
+  ],
+  "ewallets": [
+    {"code":"PROMPTPAY","th":"พร้อมเพย์","en":"PromptPay","file":"ewallets/promptpay.png","order":1},
+    {"code":"TRUEMONEY","th":"ทรูมันนี่","en":"TrueMoney","file":"ewallets/truemoney.png","order":2},
+    {"code":"WISE","th":"ไวส์","en":"Wise","file":"ewallets/wise.png","order":3},
+    {"code":"SKRILL","th":"สคริล","en":"Skrill","file":"ewallets/skrill.png","order":4},
+    {"code":"NETELLER","th":"เน็ตเทลเลอร์","en":"Neteller","file":"ewallets/neteller.png","order":5},
+    {"code":"REVOLUT","th":"เรโวลุต","en":"Revolut","file":"ewallets/revolut.png","order":6},
+    {"code":"BIGPAY","th":"บิ๊กเพย์","en":"BigPay","file":"ewallets/bigpay.png","order":7},
+    {"code":"AIRTM","th":"แอร์ทีเอ็ม","en":"Airtm","file":"ewallets/airtm.png","order":8}
+  ],
+  "crypto": [
+    {"code":"USDT","th":"เทเธอร์ (USDT)","en":"Tether USDT","file":"crypto/usdt.png","order":1},
+    {"code":"BINANCE","th":"ไบแนนซ์","en":"Binance","file":"crypto/binance.png","order":2},
+    {"code":"BITKUB","th":"บิทคับ","en":"Bitkub","file":"crypto/bitkub.png","order":3},
+    {"code":"BITTAZA","th":"บิทตาซ่า","en":"Bittaza","file":"crypto/bittaza.png","order":4},
+    {"code":"UPBIT","th":"อัพบิต","en":"Upbit","file":"crypto/upbit.png","order":5},
+    {"code":"MOONPAY","th":"มูนเพย์","en":"MoonPay","file":"crypto/moonpay.png","order":6}
+  ],
+  "cash": [
+    {"code":"CASH","th":"เงินสด","en":"Cash","file":null,"icon":"wallet","order":1}
+  ]
+}
